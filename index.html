@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Sections</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            transition: background 0.5s;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: white;
+            transition: background 0.5s;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 0 5px;
+            border-radius: 5px;
+            border: 1px solid transparent;
+        }
+
+        .tab:hover {
+            border: 1px solid #ddd;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        /* Background gradients */
+        .checkpoint {
+            background: linear-gradient(135deg, #ff4f81, #ff759d);
+        }
+
+        .fortinet {
+            background: linear-gradient(135deg, #0079c1, #00a3e1);
+        }
+
+        .altri {
+            background: linear-gradient(135deg, #555, #888);
+        }
+    </style>
+</head>
+<body>
+    <div class="container checkpoint" id="content-container">
+        <div class="tabs">
+            <div class="tab" onclick="changeContent('checkpoint')">CheckPoint</div>
+            <div class="tab" onclick="changeContent('fortinet')">Fortinet</div>
+            <div class="tab" onclick="changeContent('altri')">Altri</div>
+        </div>
+        <div class="content" id="content">
+            <h1>CheckPoint</h1>
+            <p>Welcome to the CheckPoint section.</p>
+        </div>
+    </div>
+
+    <script>
+        function changeContent(section) {
+            const contentContainer = document.getElementById('content-container');
+            const content = document.getElementById('content');
+
+            if (section === 'checkpoint') {
+                contentContainer.className = 'container checkpoint';
+                content.innerHTML = '<h1>CheckPoint</h1><p>Welcome to the CheckPoint section.</p>';
+            } else if (section === 'fortinet') {
+                contentContainer.className = 'container fortinet';
+                content.innerHTML = '<h1>Fortinet</h1><p>Welcome to the Fortinet section.</p>';
+            } else if (section === 'altri') {
+                contentContainer.className = 'container altri';
+                content.innerHTML = '<h1>Altri</h1><p>Welcome to the Altri section.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
