@@ -5,10 +5,23 @@
 # Aggiorna i pacchetti e installa Node.js
 echo "Aggiornamento pacchetti, in attesa di autorizzazione..."
 sudo apt-get update -y
+sudo apt install libnss3 -y
+sudo apt-get install libdbus-1-3 -y
+sudo apt-get install libatk1.0-0 -y
+sudo apt-get install libcups2 -y
+sudo apt install libxss1 libatk-bridge2.0-0 libgtk-3-0 -y
+sudo apt-get install libdrm2 -y
+sudo apt-get install libgbm1 -y
+sudo apt-get install libasound2 -y
+sudo apt install libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev -y
+
 
 echo "Installazione di Node.js..."
 # installs nvm (Node Version Manager)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # download and install Node.js (you may need to restart the terminal)
 nvm install 20

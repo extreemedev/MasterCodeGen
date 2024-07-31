@@ -1,8 +1,37 @@
 {
-  "devDependencies": {
-    "electron": "^31.3.1"
+  
+  "name": "mastercodegen",
+  
+  "version": "1.0.0",
+  
+  "description": "MasterCodeGen is a powerful tool designed to generate configurable code lines for use in Checkpoint and Fortinet command-line interfaces (CLI), as well as to generate plaintext. This tool is ideal for network administrators and developers who need to automate and simplify the generation of configurations and scripts.",
+  
+  "main": "main.js",
+  
+  "scripts": {
+  
+    
+  "start": "electron ."
+  
   },
+  
+  "keywords": [],
+  
+  "author": "",
+  
+  "license": "ISC",
+  
+  "devDependencies": {
+  
+    
+  "electron": "^31.3.1"
+  
+  },
+  
   "dependencies": {
-    "bootstrap": "^5.3.3"
+  
+    
+  "bootstrap": "^5.3.3"
+  
   }
 }
