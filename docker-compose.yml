@@ -1,0 +1,13 @@
+version: "4.7"
+    
+services:
+
+  node:
+    container_name: node
+    image: node:20-alpine
+    volumes:
+      - ..:/data
+    stdin_open: true
+    tty: true
+    restart: unless-stopped    
+    
